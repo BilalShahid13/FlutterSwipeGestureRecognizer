@@ -31,20 +31,23 @@ class _SwipeGestureRecognizerState extends State<SwipeGestureRecognizer> {
   @override
   void initState() {
     super.initState();
-    _horizontalSwipeStartingOffset = _horizontalSwipeStartingOffset = Offset(0, 0);
+    _horizontalSwipeStartingOffset =
+        _horizontalSwipeStartingOffset = Offset(0, 0);
     _isSwipeDown = _isSwipeUp = _isSwipeRight = _isSwipeLeft = false;
   }
 
   @override
   Widget build(BuildContext context) {
-    return (widget.onSwipeLeft != null || widget.onSwipeRight != null) && (widget.onSwipeDown != null || widget.onSwipeUp != null)
+    return (widget.onSwipeLeft != null || widget.onSwipeRight != null) &&
+            (widget.onSwipeDown != null || widget.onSwipeUp != null)
         ? GestureDetector(
             child: widget.child,
             onHorizontalDragStart: (details) {
               _horizontalSwipeStartingOffset = details.localPosition;
             },
             onHorizontalDragUpdate: (details) {
-              if (_horizontalSwipeStartingOffset.dx > details.localPosition.dx) {
+              if (_horizontalSwipeStartingOffset.dx >
+                  details.localPosition.dx) {
                 _isSwipeLeft = true;
                 _isSwipeRight = false;
               } else {
@@ -90,7 +93,8 @@ class _SwipeGestureRecognizerState extends State<SwipeGestureRecognizer> {
                   _horizontalSwipeStartingOffset = details.localPosition;
                 },
                 onHorizontalDragUpdate: (details) {
-                  if (_horizontalSwipeStartingOffset.dx > details.localPosition.dx) {
+                  if (_horizontalSwipeStartingOffset.dx >
+                      details.localPosition.dx) {
                     _isSwipeLeft = true;
                     _isSwipeRight = false;
                   } else {
@@ -113,7 +117,8 @@ class _SwipeGestureRecognizerState extends State<SwipeGestureRecognizer> {
                       _verticalSwipeStartingOffset = details.localPosition;
                     },
                     onVerticalDragUpdate: (details) {
-                      if (_verticalSwipeStartingOffset.dy > details.localPosition.dy) {
+                      if (_verticalSwipeStartingOffset.dy >
+                          details.localPosition.dy) {
                         _isSwipeUp = true;
                         _isSwipeDown = false;
                       } else {

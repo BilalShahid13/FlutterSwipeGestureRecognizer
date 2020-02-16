@@ -3,7 +3,7 @@ description: A simple and lightweight swipe gesture recognizer for a widget in F
 
 homepage: https://github.com/BilalShahid13/FlutterSwipeGestureRecognizer
 repository: https://github.com/BilalShahid13/FlutterSwipeGestureRecognizer
-version: 0.0.1
+version: 0.0.2
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
