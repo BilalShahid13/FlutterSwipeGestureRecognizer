@@ -1,16 +1,31 @@
 # swipe_gesture_recognizer
 
-A new Flutter project.
+A simple and lightweight swipe gesture recognizer for a Flutter widget.
+
+## Features
+
+Detects the 4 swipe gestures i.e `swipe up`, `swipe down`, `swipe left` and `swipe right`.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+To enable this widget, pass your widget as the child. Declare the callback function for each swipe direction and you are good.
 
-A few resources to get you started if this is your first Flutter project:
+```dart
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+    SwipeGestureRecognizer(
+        child: MyWidget(),
+        onSwipeLeft: () {
+            // DO STUFF WHEN LEFT SWIPE GESTURE DETECTED
+        },
+        onSwipeRight() {
+            // DO STUFF WHEN RIGHT SWIPE GESTURE DETECTED
+        },
+        onSwipeUp: () {
+            // DO STUFF WHEN UP SWIPE GESTURE DETECTED
+        },
+        onSwipeDown() {
+            // DO STUFF WHEN DOWN SWIPE GESTURE DETECTED
+        },
+    );
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```
