@@ -8,7 +8,7 @@ Detects the 4 swipe gestures i.e `swipe up`, `swipe down`, `swipe left` and `swi
 
 ## Getting Started
 
-To enable this widget, pass your widget as the child. Declare the callback function for each swipe direction and you are good.
+Pass your widget as the child of this widget. Declare the callback function for the desired swipe direction.
 
 ```dart
 
