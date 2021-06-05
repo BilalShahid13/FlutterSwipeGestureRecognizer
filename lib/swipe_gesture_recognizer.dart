@@ -1,13 +1,13 @@
 import 'package:flutter/widgets.dart';
 
 class SwipeGestureRecognizer extends StatefulWidget {
-  final Function() onSwipeLeft;
-  final Function() onSwipeRight;
-  final Function() onSwipeUp;
-  final Function() onSwipeDown;
-  final Widget child;
+  final Function()? onSwipeLeft;
+  final Function()? onSwipeRight;
+  final Function()? onSwipeUp;
+  final Function()? onSwipeDown;
+  final Widget? child;
   SwipeGestureRecognizer({
-    Key key,
+    Key? key,
     this.child,
     this.onSwipeDown,
     this.onSwipeLeft,
@@ -20,13 +20,13 @@ class SwipeGestureRecognizer extends StatefulWidget {
 }
 
 class _SwipeGestureRecognizerState extends State<SwipeGestureRecognizer> {
-  Offset _horizontalSwipeStartingOffset;
-  Offset _verticalSwipeStartingOffset;
+  late Offset _horizontalSwipeStartingOffset;
+  late Offset _verticalSwipeStartingOffset;
 
-  bool _isSwipeLeft;
-  bool _isSwipeRight;
-  bool _isSwipeUp;
-  bool _isSwipeDown;
+  late bool _isSwipeLeft;
+  late bool _isSwipeRight;
+  late bool _isSwipeUp;
+  late bool _isSwipeDown;
 
   @override
   void initState() {
@@ -58,11 +58,11 @@ class _SwipeGestureRecognizerState extends State<SwipeGestureRecognizer> {
             onHorizontalDragEnd: (details) {
               if (_isSwipeLeft) {
                 if (widget.onSwipeLeft != null) {
-                  widget.onSwipeLeft();
+                  widget.onSwipeLeft!();
                 }
               } else if (_isSwipeRight) {
                 if (widget.onSwipeRight != null) {
-                  widget.onSwipeRight();
+                  widget.onSwipeRight!();
                 }
               }
             },
@@ -80,9 +80,9 @@ class _SwipeGestureRecognizerState extends State<SwipeGestureRecognizer> {
             },
             onVerticalDragEnd: (details) {
               if (_isSwipeUp && widget.onSwipeUp != null) {
-                widget.onSwipeUp();
+                widget.onSwipeUp!();
               } else if (_isSwipeDown && widget.onSwipeDown != null) {
-                widget.onSwipeDown();
+                widget.onSwipeDown!();
               }
             },
           )
@@ -104,9 +104,9 @@ class _SwipeGestureRecognizerState extends State<SwipeGestureRecognizer> {
                 },
                 onHorizontalDragEnd: (details) {
                   if (_isSwipeLeft && widget.onSwipeLeft != null) {
-                    widget.onSwipeLeft();
+                    widget.onSwipeLeft!();
                   } else if (_isSwipeRight && widget.onSwipeRight != null) {
-                    widget.onSwipeRight();
+                    widget.onSwipeRight!();
                   }
                 },
               )
@@ -128,9 +128,9 @@ class _SwipeGestureRecognizerState extends State<SwipeGestureRecognizer> {
                     },
                     onVerticalDragEnd: (details) {
                       if (_isSwipeUp && widget.onSwipeUp != null) {
-                        widget.onSwipeUp();
+                        widget.onSwipeUp!();
                       } else if (_isSwipeDown && widget.onSwipeDown != null) {
-                        widget.onSwipeDown();
+                        widget.onSwipeDown!();
                       }
                     },
                   )
